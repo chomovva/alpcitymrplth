@@ -1,0 +1,13 @@
+//-
+	Набор миксинов
+
+
+mixin progress( percent )
+	.progress
+		.progress-bar( role="progressbar", style="width: " + percent, aria-valuenow=percent, aria-valuemin="0", aria-valuemax="100" )
+
+
+mixin widget( args )
+	.widget
+		h3.widget__title.title #{args.title}
+		p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis nisi asperiores eum dolorum eveniet beatae dolorem quo repudiandae commodi. Illum, enim molestiae, animi quae necessitatibus culpa consectetur aspernatur tenetur exercitationem?

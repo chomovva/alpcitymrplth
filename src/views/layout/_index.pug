@@ -1,0 +1,34 @@
+include ../helpers/_variables
+include ../helpers/_mixing
+block variables
+	- page.type = 'page';
+doctype html
+html( lang="ru" )
+	include ../parts/_head
+	block head
+	block body
+		body( class=page.type )
+			block wrapper
+				.wrapper#wrapper
+					.wrapper__item.wrapper__item--panel#panel.panel
+						block panel
+							.container
+								header.header#header
+									block header
+										include ../parts/_header
+								nav.nav#nav
+									block nav
+										include ../parts/_nav
+								.call
+									block call
+										include ../parts/_call
+					main.wrapper__item.wrapper__item--main.main#main
+						block main
+					aside.wrapper__item.wrapper__item--aside.aside#aside
+						block aside
+							include ../parts/_aside
+					footer.wrapper__item.wrapper__item--footer.footer#footer
+						block footer
+							include ../parts/_footer
+					block enqueue
+						include ../parts/_enqueue
