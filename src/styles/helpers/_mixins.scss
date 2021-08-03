@@ -116,7 +116,7 @@
 
 @mixin xy-center {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -161,14 +161,6 @@
   padding: 13px 35px;
   border-radius: 35px;
   min-width: 150px;
-}
-
-@mixin button-middle {
-  font-size: 12px;
-  line-height: line-height( 12px );
-  padding: 10px 20px;
-  border-radius: 30px;
-  min-width: 100px;
 }
 
 @mixin button-small {

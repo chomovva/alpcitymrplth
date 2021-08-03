@@ -1,0 +1,24 @@
+//-
+	Главная страница
+	Услуги
+
+mixin services_entry ( args )
+	.col-xs-6.col-sm-4.col-md-4.col-lg-4
+		a.entry( href="#" )
+			img.thumbnail( src='#' data-src=args.thumbnail alt=args.title )
+			strong.title #{args.title}
+
+section.section.section--services.services.mt-3.mb-3.pt-3.pb-3#services
+
+	.container
+
+		h2#servies-title.mb-3 Чем мы занимаемся
+
+		.row.stratch-xs
+
+			+services_entry( { title: 'Утепление фасадов', thumbnail: src.userfiles+'services/building.png' } )
+			+services_entry( { title: 'Ремонт межпанельных швов', thumbnail: src.userfiles+'services/building.png' } )
+			+services_entry( { title: 'Монтаж воздуховодов', thumbnail: src.userfiles+'services/building.png' } )
+			+services_entry( { title: 'Уборка снега и льда с крыш', thumbnail: src.userfiles+'services/building.png' } )
+			+services_entry( { title: 'Мойка фасадов', thumbnail: src.userfiles+'services/building.png' } )
+			+services_entry( { title: 'Монтаж / демонтаж рекламы', thumbnail: src.userfiles+'services/building.png' } )

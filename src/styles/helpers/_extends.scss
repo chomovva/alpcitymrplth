@@ -31,13 +31,8 @@
 
 
 %lead {
-	margin-bottom: $line-height-base;
-	font-size: floor( ( $font-size-base * 1.15 ) );
+	font-size: 125%;
 	font-weight: 300;
-	line-height: 1.4;
-	@media ( min-width: $screen-sm ) {
-		font-size: ( $font-size-base * 1.5 );
-	}
 }
 
 
@@ -47,6 +42,12 @@
 	left: 0;
 	right: 0;
 	bottom: 0;
+}
+
+%bgi-contain {
+	background-position: center center;
+	background-size: contain;
+	background-repeat: no-repeat;
 }
 
 %bgi-cover {

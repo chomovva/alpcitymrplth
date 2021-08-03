@@ -1,0 +1,37 @@
+//- Главная страница
+//- Блог
+
+.section--blog {
+
+	.entry.short {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: stretch;
+	}
+
+	.entry.short + p {
+		height: 2em * $line-height-base;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+
+	.entry .thumbnail {
+		display: block;
+		position: relative;
+		overflow: hidden;
+		padding-top: 100%;
+	}
+
+	.entry .wp-post-thumbnail {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		min-width: 100%;
+		min-height: 100%;
+		width: auto;
+		height: auto;
+		transform: translate( -50%, -50% );
+	}
+
+}

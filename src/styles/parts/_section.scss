@@ -1,5 +1,9 @@
 .section {
-	
-	//-
+
+	position: relative;
+
+	&.section--jumbotron {
+		min-height: 75vh;
+	}
 
 }

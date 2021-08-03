@@ -1,0 +1,33 @@
+//- Главная страница
+//- Каталог продукции
+
+mixin shop_entry ( args )
+	a.entry( href="#" )
+		img.thumbnail( loading='lazy' src=args.thumbnail alt=args.title )
+		.overlay
+			h3.title #{args.title}
+			p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+
+section.section.section--shop.mt-3.mb-3.pt-3.pb-3.shop.slider#shop
+
+	.container
+		.row.middle-xs.mb-3
+
+			.col-xs-8.col-sm-8.col-md-4.col-lg-5
+				h2#shop-title Каталог продукции
+
+			.col-xs-8.col-sm-8.col-md-4.col-lg-4
+				a.btn.btn-lg.btn-primary( href='#' ) Все товары
+
+			.col-xs-4.col-sm-4.col-md-4.col-lg-3
+				.controls
+					button.slider-button.prev#shop-prev-button #[span.sr-only Предыдущая запись]
+					button.slider-button.next#shop-next-button #[span.sr-only Следующая запись]
+
+		#shop-content
+			+shop_entry( { thumbnail: src.userfiles+'shop/01.png', title: 'Статичные светодиодные приборы' } )
+			+shop_entry( { thumbnail: src.userfiles+'shop/02.png', title: 'Контроллеры' } )
+			+shop_entry( { thumbnail: src.userfiles+'shop/03.png', title: 'Аксессуары' } )
+			+shop_entry( { thumbnail: src.userfiles+'shop/01.png', title: 'Статичные светодиодные приборы' } )
+			+shop_entry( { thumbnail: src.userfiles+'shop/02.png', title: 'Контроллеры' } )
+			+shop_entry( { thumbnail: src.userfiles+'shop/03.png', title: 'Аксессуары' } )

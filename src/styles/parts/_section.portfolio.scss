@@ -1,0 +1,62 @@
+//- Главная страница
+//- Портфолио
+
+.section--portfolio {
+
+	.slick-slide {
+		margin: $flexboxgrid-outer-margin 0 $flexboxgrid-outer-margin $flexboxgrid-outer-margin;
+	}
+
+	.entry {
+		position: relative;
+		background-color: lighten( $brand-primary, 50% );
+		padding-top: 75%;
+		overflow: hidden;
+	}
+
+	.entry:hover .overlay {
+		background-color: $brand-success;
+		color: #fff;
+	}
+
+	.entry:hover .thumbnail {
+		transform: scale( 1.05 );
+	}
+
+	.entry .thumbnail {
+		min-width: 100%;
+		min-height: 100%;
+		width: auto;
+		height: auto;
+		position: absolute;
+		top: 0;
+		left: 0;
+		transform-origin: center center;
+		transition: transform 5s;
+	}
+
+	.entry .overlay {
+		background-color: #fff;
+		position: absolute;
+		right: 2rem;
+		bottom: 2rem;
+		padding: .5rem 1rem;
+		width: 15rem;
+		height: 5rem;
+		transition: background-color .2s;
+	}
+
+	.entry .title {
+		max-height: 1 * $line-height-computed;
+	}
+
+	.entry .title + p {
+		max-height: 2 * $line-height-computed;
+		overflow: hidden;
+	}
+
+	.entry .title + p::after {
+
+	}
+
+}

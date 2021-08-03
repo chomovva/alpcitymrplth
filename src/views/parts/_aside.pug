@@ -1,2 +1,37 @@
 //-
 	Сайдбар подвала
+
+mixin aside_widget( args )
+	.col-xs-12.col-sm
+		+widget( args )
+			block
+
+.container.font-weight-bold
+	.row.middle-xs.pt-2.pb-2
+		.col-xs-6.col-sm-3.col-md.col-lg.text-xs-left
+			p.h3 #[a( href='tel:380688478820' ) +38 (068) 847 88 20]
+		.col-xs-6.col-sm-3.col-md.col-lg.last-sm.text-xs-right
+			p #[a( href='mailto:promsource@gmail.com' ) promsource@gmail.com]
+		.col-xs-12.col-sm-6.col-md-7.col-lg-7.text-xs-center
+			p 191180, Санкт-Петербург, Набережная реки Фонтанки, 90, корпус 1
+
+.container
+	.row.pt-2.pb-2
+		.col-xs-12.col-sm-4.col-md-4.col-lg-4.last-sm.text-xs-center.text-sm-right
+			ul.socials
+				li: a.facebook( href='#' target='_blank' ) #[span.sr-only Ссылка на профиль в Facebook]
+				li: a.instagram( href='#' target='_blank' ) #[span.sr-only Ссылка на профиль в Instagram]
+		.col-xs-12.col-sm-8.col-md-8.col-lg-8
+			.row
+				+aside_widget( {} )
+					ul
+						li: a( href='#' ) Роупджампинг
+						li: a( href='#' ) О компании
+				+aside_widget( {} )
+					ul
+						li: a( href='#' ) Каталог товаров
+						li: a( href='#' ) Вакансии
+				+aside_widget( {} )
+					ul
+						li: a( href='#' ) Наши проекты
+						li: a( href='#' ) Контакты

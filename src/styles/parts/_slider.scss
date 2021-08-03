@@ -1,0 +1,43 @@
+//- элементы слайдера
+.slider {
+
+	.controls {
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-end;
+		align-items: center;
+	}
+
+	.slider-button {
+		@extend %xy-center;
+		background-color: $body-color;
+		border: .2rem solid $brand-primary;
+		margin: 0;
+		padding: 0;
+		width: 4rem;
+		height: 4rem;
+	}
+
+	.slider-button + .slider-button {
+		border-left: none;
+	}
+
+	.slider-button:hover::before {
+		@extend %icon-angle-success;
+	}
+
+	.slider-button::before {
+		@extend %icon;
+		@extend %background-icon;
+		@extend %icon-angle-primary;
+		content: '';
+		width: 1rem;
+		height: 1rem;
+		transform-origin: center center;
+	}
+
+	.slider-button.next::before {
+		transform: rotate( 180deg );
+	}
+
+}

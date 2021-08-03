@@ -1,0 +1,38 @@
+//- Главная странциа
+//- Услуги
+.section--services {
+
+	.entry {
+		@extend %xy-center;
+		margin: 0 0 $flexboxgrid-outer-margin 0;
+		padding-top: 2.5rem;
+		padding-bottom: 2.5rem;
+		background-color: #F7F7F7;
+		min-height: 10rem;
+		height: inherit;
+	}
+
+	.entry:hover .title {
+		color: $brand-success;
+	}
+
+	.entry .thumbnail {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		margin-bottom: 1rem;
+		max-width: 8rem;
+		height: auto;
+	}
+
+	.entry .title {
+		@extend %h3;
+		display: block;
+		text-transform: uppercase;
+		text-align: center;
+		max-width: 15rem;
+		margin: 0 auto;
+		transition: color .25s;
+	}
+
+}

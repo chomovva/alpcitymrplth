@@ -1,0 +1,30 @@
+//-
+	Главная страница
+	Отзывы
+
+mixin reviews_entry
+	.entry
+		blockquote
+			p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.
+			cite Иван Иванов, #[snap.text-primary Утепление]
+
+section.section.section--reviews.slider.reviews#reviews
+
+	.container
+		.row.middle-xs.mb-3
+
+			.col-xs-8.col-sm-8.col-md-8.col-lg-8
+				h2#reviews-title Отзывы наших клиентов
+
+			.col-xs-4.col-sm-4.col-md-4.col-lg-4
+				.controls
+					button.slider-button.prev#reviews-prev-button #[span.sr-only Предыдущая запись]
+					button.slider-button.next#reviews-next-button #[span.sr-only Следующая запись]
+
+		#reviews-content
+			+reviews_entry ( {} )
+			+reviews_entry ( {} )
+			+reviews_entry ( {} )
+			+reviews_entry ( {} )
+			+reviews_entry ( {} )
+			+reviews_entry ( {} )

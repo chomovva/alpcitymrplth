@@ -35,8 +35,8 @@ $half-gutter-width: $flexboxgrid-gutter-width * .5;
 
 .container,
 .container-fluid {
-	padding-right: $flexboxgrid-outer-margin;
-	padding-left: $flexboxgrid-outer-margin;
+	padding-right: $flexboxgrid-gutter-width;
+	padding-left: $flexboxgrid-gutter-width;
 }
 
 .row {
@@ -111,6 +111,22 @@ $name: $smallest;
 .center-#{$name} {
 	@include justify-content(center);
 	// text-align: center;
+}
+
+.text-#{$name}-center {
+	text-align: center;
+}
+
+.text-#{$name}-left {
+	text-align: left;
+}
+
+.text-#{$name}-right {
+	text-align: right;
+}
+
+.text-#{$name}-justify {
+	text-align: justify;
 }
 
 .end-#{$name} {
@@ -198,6 +214,23 @@ $name: $smallest;
 					margin-left: 100% / $flexboxgrid-grid-columns * $i;
 				}
 			}
+		}
+		.center-#{$name} {
+			@include justify-content(center);
+			// text-align: center;
+		}
+
+		.text-#{$name}-center {
+			text-align: center;
+		}
+		.text-#{$name}-left {
+			text-align: left;
+		}
+		.text-#{$name}-right {
+			text-align: right;
+		}
+		.text-#{$name}-justify {
+			text-align: justify;
 		}
 		.col-#{$name} {
 			@include flex-grow(1);

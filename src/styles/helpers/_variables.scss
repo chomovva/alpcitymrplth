@@ -28,18 +28,18 @@ $brand-colors:
 
 
 $body-color: #ffffff;
-$titles-color: #262626;
 $text-color: #575656;
-$link-color: $titles-color;
+$link-color: darken( $text-color, 25% );
 
-$font-size-base:    14px;
-$line-height-base:	26em / 14em;
+$font-size-base:    16px;
+$line-height-base:	24em / 16em;
 $line-height-computed: floor( $font-size-base * $line-height-base );
 
 $font-family-base: 'Open Sans', sans-serif;
+$font-family-titles: 'Oswald', sans-serif;
 
 $border-color: $brand-default;
 
-$border-radius: .25rem;
+$border-radius: 0;
 
 $box-shadow: 0 0 2rem rgba( 0, 0, 0, .25 );

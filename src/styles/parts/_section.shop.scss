@@ -1,0 +1,66 @@
+//- Главная страница
+//- Каталог продукции
+
+.section--shop {
+
+	.slick-slide {
+		margin: $flexboxgrid-outer-margin 0 $flexboxgrid-outer-margin $flexboxgrid-outer-margin;
+	}
+
+	.entry {
+		display: block;
+		border: .2rem solid $brand-primary;
+		position: relative;
+		transition: border-color .25s;
+		padding-top: 85%;
+		box-sizing: border-box;
+	}
+
+	.entry:hover {
+		border-color: $brand-success;
+	}
+
+	.entry:hover .overlay {
+		background-color: $brand-success;
+	}
+
+	.entry .overlay {
+		position: absolute;
+		right: 0;
+		bottom: 1rem;
+		background-color: $brand-primary;
+		color: #fff;
+		height: 5.5rem;
+		padding: 0 1.25rem;
+		width: 75%;
+		// width: calc( 70% - 2.5rem );
+		transition: background-color .25s;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: flex-start;
+		box-sizing: border-box;
+	}
+
+	.entry .title {
+		@extend %h3;
+		color: #fff;
+		max-height: 1em * $line-height-base * 2;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+
+	.entry .thumbnail {
+		position: absolute;
+		display: block;
+		top: 50%;
+		left: 50%;
+		transform-origin: center center;
+		transform: translate( -50%, -50% );
+	}
+
+	.entry p {
+		@extend %hide;
+	}
+
+}

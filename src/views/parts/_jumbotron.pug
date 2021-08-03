@@ -1,0 +1,11 @@
+//-
+	Первый экран под шапкой
+
+.section.section--jumbotron.jumbotron.xy-center.bg-primary.mt-0#jumbotron
+	.bgi#jumbotron-bgi( data-src=src.userfiles+'jumbotron.jpg' )
+	.container.mt-3.mb-3
+		.row
+			.col-xs-12.col-sm-8.col-md-5.col-lg-5.col-sm-offset-2.col-md-offset-3.col-lg-offset-3
+				h1.title#jumbotron-title #{blog.name}
+				p.description#jumbotron-description #{blog.description}
+				a.permalink#jumbotron-permalink( href="#" ) Заказть расчет стоимости

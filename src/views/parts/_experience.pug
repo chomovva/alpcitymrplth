@@ -1,0 +1,20 @@
+//-
+	Главная страница
+	Опыт
+
+mixin experience_entry( args )
+	.col-xs-6.col-sm-3.col-md-3.col-lg-3
+		strong.entry.text-xs-center.mb-2.d-block
+			span.d-block.value.h1 #{args.value}
+			span.d-block.title #{args.title}
+
+section.section.section--experience.experience.pt-3.pb-3.mb-3.mt-3.bg-primary#experience
+
+	.container
+		h2.hide#experience-title Опыт
+
+		.row
+			+experience_entry( { value: '15', title: 'лет на рынке' } )
+			+experience_entry( { value: '1500', title: 'выполненных объектов' } )
+			+experience_entry( { value: '1000', title: 'довольных клиентов' } )
+			+experience_entry( { value: '150 000', title: 'м² утеплённых стен' } )

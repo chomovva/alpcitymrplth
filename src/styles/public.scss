@@ -8,7 +8,7 @@
 @import "helpers/extends";
 
 
-// @import "base/normalize";
+@import "base/normalize";
 @import "base/type";
 @import "base/wrapper";
 @import "base/flexboxgrid";
@@ -18,11 +18,18 @@
 @import "widgets/calendar";
 
 
-@import "parts/header";
+@import "parts/panel";
 @import "parts/jumbotron";
 @import "parts/section";
+@import "parts/section.services";
+@import "parts/section.shop";
+@import "parts/section.experience";
+@import "parts/section.portfolio";
+@import "parts/section.reviews";
+@import "parts/section.action";
+@import "parts/section.blog";
+@import "parts/slider";
 @import "parts/burger";
-@import "parts/nav";
 @import "parts/form";
 @import "parts/button";
 @import "parts/pager";
@@ -31,7 +38,10 @@
 @import "parts/pagination";
 @import "parts/totopbutton";
 @import "parts/adminbar";
+@import "parts/form";
+@import "parts/aside";
 @import "parts/footer";
 
 
 @import "templates/search";
+@import "templates/home";

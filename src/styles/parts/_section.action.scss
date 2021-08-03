@@ -1,0 +1,34 @@
+//- Главная странциа
+//- Призыв заказать обратный звонок
+
+.section--action {
+
+	h2 {
+		@extend %h1;
+		font-weight: bold;
+		color: #fff;
+		padding-left: 0;
+	}
+
+	h2::before {
+		display: none;
+	}
+
+	h2::after {
+		display: none;
+	}
+
+	h2 + p {
+		@extend %h3;
+		color: #fff;
+	}
+
+	.permalink {
+		@extend %button;
+		@extend %button-large;
+		background-color: #fff;
+		color: $text-color;
+		border-color: #fff;
+	}
+
+}

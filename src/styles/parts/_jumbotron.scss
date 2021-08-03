@@ -1,5 +1,30 @@
-.jumbotron {
+.section--jumbotron {
 
-	//-
+	.bgi {
+		@extend %bgi;
+		@extend %bgi-cover;
+		z-index: 0;
+	}
+
+	.container {
+		z-index: 1;
+	}
+
+	.title {
+		color: #fff;
+		margin-bottom: 1rem;
+	}
+
+	.description {
+		@extend %lead;
+		color: #fff;
+		margin: 1rem 0;
+	}
+
+	.permalink {
+		@extend %button;
+		@extend %button-large;
+		margin-top: 1rem;
+	}
 
 }
