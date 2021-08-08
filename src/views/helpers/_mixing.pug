@@ -1,13 +1,30 @@
 //-
 	Набор миксинов
 
-
-mixin progress( percent )
+//- прогрессбар
+mixin progress ( percent )
 	.progress
-		.progress-bar( role="progressbar", style="width: " + percent, aria-valuenow=percent, aria-valuemin="0", aria-valuemax="100" )
+		.progress-bar( role='progressbar' style='width: ' + percent aria-valuenow=percent aria-valuemin='0' aria-valuemax='100' )
 
 
-mixin widget( args )
+//- виджет сайдбара
+mixin widget ( args )
 	.widget
 		h3.widget__title.title #{args.title}
 		block
+
+//- товар магазина
+mixin product ( args )
+	.product: a.wrap( href='#' )
+		img.thumbnail( loading='lazy' src=args.thumbnail alt=args.title )
+		.overlay
+			h3.title #{args.title}
+			p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+
+//- работа портфолио
+mixin card ( args )
+	.card: a.wrap( href="#" )
+		img.thumbnail( src=args.thumbnail alt=args.title loading='lazy' )
+		.overlay
+			h3.title #{args.title}
+			p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat

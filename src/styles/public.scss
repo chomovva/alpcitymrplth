@@ -18,9 +18,11 @@
 @import "widgets/calendar";
 
 
+@import "parts/mobilenav";
 @import "parts/panel";
-@import "parts/jumbotron";
+@import "parts/section.jumbotron";
 @import "parts/section";
+@import "parts/section.about";
 @import "parts/section.services";
 @import "parts/section.shop";
 @import "parts/section.experience";
@@ -39,9 +41,14 @@
 @import "parts/totopbutton";
 @import "parts/adminbar";
 @import "parts/form";
+@import "parts/card";
+@import "parts/product";
 @import "parts/aside";
+@import "parts/column";
 @import "parts/footer";
 
 
 @import "templates/search";
 @import "templates/home";
+@import "templates/catalog";
+@import "templates/portfolio";

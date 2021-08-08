@@ -2,8 +2,12 @@
 //- Отзывы
 .section--reviews {
 
-	.entry {
-		//-
+	.entry .star {
+		@extend %background-icon;
+		@extend %icon-star;
+		display: inline-block;
+		width: 1rem;
+		height: 1rem;
 	}
 
 }

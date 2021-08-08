@@ -16,6 +16,30 @@
 	position: relative;
 	overflow: hidden;
 
+	&__item--mobilenav {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-color: $brand-primary;
+		color: #fff;
+		z-index: 9999;
+		padding: 5rem 2.5rem;
+		visibility: hidden;
+		opacity: 0;
+		transition: opacity .2s, visibility .2s, transform .2s;
+		transform-origin: center center;
+		transform: scale( .8 );
+		overflow-y: scroll;
+	}
+
+	&__item--mobilenav.active {
+		visibility: visible;
+		opacity: 1;
+		transform: scale( 1 );
+	}
+
 	&__item--main {
 		width: 100vw;
 		flex-grow: 1;
@@ -29,7 +53,20 @@
 		background-color: $brand-primary;
 		width: 100vw;
 		padding: .5rem 0;
-		transition: background-color .25s;
+		transition: transform .2s, opacity .2s;
+	}
+
+	&__item--panel.cloned {
+		position: fixed;
+		bottom: 100%;
+		left: 0;
+		right: 0;
+		opacity: 0;
+	}
+
+	&__item--panel.fixed {
+		transform: translate( 0%, 100% );
+		opacity: 1;
 	}
 
 	&__item--aside {

@@ -1,0 +1,21 @@
+extend layout/_index
+
+
+block variables
+	- page.type = 'archive category portfolio';
+	- page.title = 'Портфолио';
+
+
+block main
+	.container
+		h1 #{page.title}
+		include parts/_breadcrumbs
+		h2.sr-only Список постов
+		.row
+			+card ( { thumbnail: src.userfiles+'portfolio/01.jpg', title: 'ССК “ОЛИМП”' } )
+			+card ( { thumbnail: src.userfiles+'portfolio/02.jpg', title: 'ССК “ОЛИМП”' } )
+			+card ( { thumbnail: src.userfiles+'portfolio/01.jpg', title: 'ССК “ОЛИМП”' } )
+			+card ( { thumbnail: src.userfiles+'portfolio/02.jpg', title: 'ССК “ОЛИМП”' } )
+			+card ( { thumbnail: src.userfiles+'portfolio/01.jpg', title: 'ССК “ОЛИМП”' } )
+			+card ( { thumbnail: src.userfiles+'portfolio/02.jpg', title: 'ССК “ОЛИМП”' } )
+		include parts/_pagination

@@ -1,0 +1,64 @@
+//- Карточка
+//- Пример работы
+.card .wrap {
+	display: block;
+	position: relative;
+	background-color: lighten( $brand-primary, 50% );
+	padding-top: 75%;
+	overflow: hidden;
+}
+
+.card .wrap:hover .overlay {
+	background-color: $brand-success;
+	color: #fff;
+}
+
+.card .wrap:hover .thumbnail {
+	transform: scale( 1.05 );
+}
+
+.card .thumbnail {
+	min-width: 100%;
+	min-height: 100%;
+	width: auto;
+	height: auto;
+	position: absolute;
+	top: 0;
+	left: 0;
+	transform-origin: center center;
+	transition: transform 5s;
+}
+
+.card .overlay {
+	background-color: #fff;
+	position: absolute;
+	left: 1rem;
+	right: 1rem;
+	bottom: 1rem;
+	padding: .5rem 1rem;
+	width: 12.5rem;
+	height: 5rem;
+	transition: background-color .2s;
+	@include min-width ( $screen-sm ) {
+		left: auto;
+		height: 5.5rem;
+		right: 2rem;
+		bottom: 2rem;
+	}
+}
+
+.card .title {
+	margin-top: 0;
+	max-height: 1 * $line-height-base * 1em;
+}
+
+.card .title + p {
+	margin-top: 0;
+	max-height: 2 * $line-height-base * 1em;
+	overflow: hidden;
+}
+
+.card .title + p::after {
+	content: '…';
+	display: inline;
+}

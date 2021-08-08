@@ -1,0 +1,21 @@
+extend layout/_index
+
+
+block variables
+	- page.type = 'blog archive category catalog';
+	- page.title = 'Товары';
+
+
+block main
+	.container
+		h1 #{page.title}
+		include parts/_breadcrumbs
+		h2.sr-only Список товаров
+		.row.center-xs
+			+product ( { thumbnail: src.userfiles+'shop/01.png', title: 'Статичные светодиодные приборы' } )
+			+product ( { thumbnail: src.userfiles+'shop/02.png', title: 'Контроллеры' } )
+			+product ( { thumbnail: src.userfiles+'shop/03.png', title: 'Аксессуары' } )
+			+product ( { thumbnail: src.userfiles+'shop/01.png', title: 'Статичные светодиодные приборы' } )
+			+product ( { thumbnail: src.userfiles+'shop/02.png', title: 'Контроллеры' } )
+			+product ( { thumbnail: src.userfiles+'shop/03.png', title: 'Аксессуары' } )
+		include parts/_pagination

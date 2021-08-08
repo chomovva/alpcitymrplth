@@ -17,6 +17,8 @@ $flexboxgrid-breakpoints:
 $flexboxgrid-max-width: 1920px;
 $smallest: xs;
 
+$screen-nav-hide: $screen-lg;
+
 $brand-default:     #343434;
 $brand-primary:     #005BC1;
 $brand-success:     #F24822;
@@ -32,8 +34,7 @@ $text-color: #575656;
 $link-color: darken( $text-color, 25% );
 
 $font-size-base:    16px;
-$line-height-base:	24em / 16em;
-$line-height-computed: floor( $font-size-base * $line-height-base );
+$line-height-base:	24 / 16;
 
 $font-family-base: 'Open Sans', sans-serif;
 $font-family-titles: 'Oswald', sans-serif;

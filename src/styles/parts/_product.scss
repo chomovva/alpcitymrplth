@@ -1,0 +1,65 @@
+//- Товар магазина (в виде карточки)
+.product .wrap {
+	display: block;
+}
+
+.product:hover .wrap {
+	border-color: $brand-success;
+}
+
+.product:hover .wrap .overlay {
+	background-color: $brand-success;
+}
+
+.product .wrap {
+	border: .2rem solid $brand-primary;
+	position: relative;
+	transition: border-color .25s;
+	padding-top: 85%;
+	box-sizing: border-box;
+}
+
+.product .wrap .overlay {
+	position: absolute;
+	right: 0;
+	bottom: 1rem;
+	background-color: $brand-primary;
+	color: #fff;
+	height: 3.5rem;
+	padding: 0 .5rem;
+	width: 75%;
+	transition: background-color .25s;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	box-sizing: border-box;
+	@include min-width( $screen-sm ) {
+		padding: 0 1.25rem;
+		height: 5.5rem;
+	}
+}
+
+.product .wrap .title {
+	@extend %small;
+	color: #fff;
+	max-height: 1em * $line-height-base * 2;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	@include min-width( $screen-sm ) {
+		font-size: initial;
+	}
+}
+
+.product .wrap .thumbnail {
+	position: absolute;
+	display: block;
+	top: 50%;
+	left: 50%;
+	transform-origin: center center;
+	transform: translate( -50%, -50% );
+}
+
+.product .wrap .overlay p {
+	@extend %hide;
+}

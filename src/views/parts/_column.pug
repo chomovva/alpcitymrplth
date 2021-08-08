@@ -1,0 +1,27 @@
+//-
+	Сайдбар
+	Колонка
+
+mixin column_widget ( args )
+	.col-xs-12.col-sm-4.col-md-12.col-lg-12.mt-3.mb-3
+		+widget( args )
+			block
+
+aside.column
+
+	.row
+
+		+column_widget( { title: 'Поиск по сайту' } )
+			include ../forms/_search
+
+		+column_widget( { title: 'Меню' } )
+			ul
+				li: a( href="#" ) Оплата доставка
+				li: a( href="#" ) Вакансии
+				li: a( href="#" ) Магазин
+				li: a( href="#" ) Утепление фасадов
+				li: a( href="#" ) Ремонт межпанельных швов
+				li: a( href="#" ) Монтаж воздуховодов
+				li: a( href="#" ) Уборка снега и льда с крыш
+				li: a( href="#" ) Мойка фасадов
+				li: a( href="#" ) Монтаж / демонтаж рекламы

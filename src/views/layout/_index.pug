@@ -10,6 +10,9 @@ html( lang="ru" )
 		body( class=page.type )
 			block wrapper
 				.wrapper#wrapper
+					.wrapper__item.wrapper__item--mobilenav#mobilenav.mobilenav
+						block mobilenav
+							include ../parts/_mobilenav
 					.wrapper__item.wrapper__item--panel#panel.panel
 						block panel
 							.container

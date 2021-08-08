@@ -502,11 +502,15 @@ ul {
 
 blockquote {
 	display: block;
-	margin: $flexboxgrid-outer-margin;
-	padding: 5rem 1rem 1rem 1rem;
+	margin: $flexboxgrid-outer-margin / 2;
+	padding: 2.5rem .5rem .5rem .5rem;
 	font-style: normal;
 	text-align: left;
 	position: relative;
+	@include min-width ( $screen-sm ) {
+		padding: 5rem 1rem 1rem 1rem;
+		margin: $flexboxgrid-outer-margin;
+	}
 }
 
 blockquote p {
@@ -518,12 +522,16 @@ blockquote::before {
 	display: block;
 	position: absolute;
 	top: 0;
-	left: 2rem;
-	font-size: 8.5rem;
+	left: 1.25rem;
+	font-size: 4.25rem;
 	line-height: 1;
 	font-family: $font-family-titles;
 	font-weight: bold;
 	color: $brand-primary;
+	@include min-width ( $screen-sm ) {
+		font-size: 8.5rem;
+		left: 2rem;
+	}
 }
 
 cite {

@@ -4,12 +4,15 @@
 
 	.entry {
 		@extend %xy-center;
-		margin: 0 0 $flexboxgrid-outer-margin 0;
-		padding-top: 2.5rem;
-		padding-bottom: 2.5rem;
+		margin: 0 auto $flexboxgrid-outer-margin auto;
 		background-color: #F7F7F7;
 		min-height: 10rem;
+		max-width: 15rem;
+		padding: 2.5rem 1rem;
 		height: inherit;
+		@include min-width ( $screen-sm ) {
+			max-width: 100%;
+		}
 	}
 
 	.entry:hover .title {

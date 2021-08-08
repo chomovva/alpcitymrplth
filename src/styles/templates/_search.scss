@@ -9,10 +9,13 @@
 
 	.entry .counter {
 		@extend %xy-center;
-		width: 3rem;
-		height: 3rem;
-		// background-color: $brand-success;
+		width: 2rem;
+		height: 2rem;
 		background-color: $brand-primary;
+		@include min-width ( $screen-sm ) {
+			width: 3rem;
+			height: 3rem;
+		}
 	}
 
 	.entry .counter::after {
