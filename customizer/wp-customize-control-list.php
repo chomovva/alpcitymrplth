@@ -204,7 +204,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) :
 						break;
 
 					case 'entries':
-						$args[ 'input_atts' ][ 'data-post-type' ] = ( ! array_key_exists( 'post_type', $args ) || empty( $args[ 'post_type' ] ) ) ? $args[ 'post_type' ] : 'posts';
+						$args[ 'input_atts' ][ 'data-post-type' ] = ( ! array_key_exists( 'post_type', $args ) || empty( $args[ 'post_type' ] ) ) ? 'posts' : $args[ 'post_type' ];
 						?>
 							<label <?php echo $this->render_atts( $args[ 'label_atts' ] ); ?> >
 								<?php echo $args[ 'label' ]; ?>

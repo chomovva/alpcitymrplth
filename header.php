@@ -25,25 +25,45 @@ if ( ! defined( 'ABSPATH' ) ) { exit; };
 
 			<div class="wrapper__item wrapper__item--panel panel" id="panel">
 				<div class="container">
-					<header class="header" id="header"><a class="custom-logo-link" href="#"><img class="custom-logo" src="./userfiles/logo.png" alt="АльпСити"></a></header>
+
+					<header class="header" id="header">
+						<?php if ( has_custom_logo() ) : the_custom_logo(); else : ?>
+							<a href="<?php echo home_url( '/', null ); ?>" class="bloginfo-name">
+								<strong><?php bloginfo( 'name' ); ?></strong>
+							</a>
+						<?php endif; ?>
+					</header>
+
 					<nav class="nav" id="nav">
-						<ul class="nav__list list">
-							<li class="menu-item"><a href="#">О компании</a></li>
-							<li class="menu-item"><a href="#">Наши работы</a></li>
-							<li class="menu-item"><a href="#">Каталог материалов</a></li>
-							<li class="menu-item"><a href="#">Фасад</a></li>
-							<li class="menu-item"><a href="#">Кровля</a></li>
-							<li class="menu-item"><a href="#">Контакты</a></li>
-						</ul>
-						<button class="burger" data-mobilenav="toggle"><span class="line"></span> <span class="line"></span> <span class="line"></span> <span class="sr-only">Открыть меню</span></button>
+						<?php
+							if ( has_nav_menu( 'main' ) ) {
+								wp_nav_menu( [
+									'theme_location'  => 'main',
+									'menu'            => 'main',
+									'container'       => false,
+									'menu_id'         => 'main-nav-list',
+									'menu_class'      => 'nav__list list',
+									'echo'            => true,
+									'depth'           => 1,
+								] );
+							}
+						?>
+						<?php if ( has_nav_menu( 'mobile' ) || is_active_sidebar( 'mobile' ) ) : ?>
+							<button class="burger" data-mobilenav="toggle">
+								<span class="line"></span> <span class="line"></span> <span class="line"></span>
+								<span class="sr-only"><?php esc_html_e( 'Открыть меню', ALPCITYMRPLTH_TEXTDOMAIN ); ?></span>
+							</button>
+						<?php endif; ?>
 					</nav>
-					<div class="languages" id="languages">
-						<div class="current">RU</div>
-						<ul>
-							<li><a href="#">UA</a></li>
-							<li><a href="#">EN</a></li>
-						</ul>
-					</div><a class="phone" href="tel:380688478820"><span class="value">+38 (068) 847 8820</span></a>
+
+					<?php get_template_part( 'parts/languages', null, [] ); ?>
+
+					<?php if ( ( bool ) $panel_phone = trim( get_theme_mod( 'headerphone' ) ) ) : ?>
+						<a id="panel-phone" class="phone" href="tel:<?php echo esc_attr( preg_replace( '/[^0-9]/', '', $panel_phone ) ); ?>">
+							<span class="value"><?php echo esc_html( $panel_phone ); ?></span>
+						</a>
+					<?php endif; ?>
+
 				</div>
 			</div>
 			<main class="wrapper__item wrapper__item--main main" id="main">

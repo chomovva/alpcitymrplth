@@ -1,7 +1,7 @@
 <?php
 
 
-namespace ropejump;
+namespace alpcitymrplth;
 
 
 if ( ! defined( 'ABSPATH' ) ) { exit; };
@@ -30,7 +30,7 @@ function brand_admin_logo() {
 	}
 }
 
-add_action( 'admin_head', 'ropejump\brand_admin_logo' );
+add_action( 'admin_head', 'alpcitymrplth\brand_admin_logo' );
 
 
 /**
@@ -58,7 +58,7 @@ function brand_login_logo() {
 	}
 }
 
-add_action( 'login_head', 'ropejump\brand_login_logo' );
+add_action( 'login_head', 'alpcitymrplth\brand_login_logo' );
 
 
 /**

@@ -13,11 +13,11 @@
 	color: #fff;
 }
 
-.card .wrap:hover .thumbnail {
+.card .wrap:hover .wp-post-thumbnail {
 	transform: scale( 1.05 );
 }
 
-.card .thumbnail {
+.card .wp-post-thumbnail {
 	min-width: 100%;
 	min-height: 100%;
 	width: auto;

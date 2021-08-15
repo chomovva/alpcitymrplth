@@ -4,10 +4,12 @@
 		display: flex;
 		flex-direction: row;
 		align-items: center;
+		min-height: 4rem;
 	}
 
 	.header {
-		margin-right: 2rem;
+		margin-right: 1.5rem;
+		color: #fff;
 	}
 
 	.header .custom-logo-link {
@@ -21,8 +23,12 @@
 		}
 	}
 
+	.header .bloginfo-name {
+		color: #fff;
+	}
+
 	.nav {
-		margin-right: 2rem;
+		margin-right: 1.5rem;
 		margin-left: auto;
 		@include min-width ( $screen-nav-hide ) {
 			margin-left: 0;
@@ -111,15 +117,9 @@
 		@extend %small;
 		margin: 0 2rem 0 auto;
 		text-align: center;
-		position: relative;
 		flex-shrink: 0;
-	}
-
-	.languages ul {
-		display: inline-block;
 		list-style-type: none;
-		padding: 0;
-		margin: 0;
+		padding-left: 0;
 	}
 
 	.languages li {

@@ -1,7 +1,7 @@
 .admin-bar {
 
-	.panel {
-		top: 32px;
+	&.home .wrapper .panel {
+		margin-top: 32px;
 	}
 
 	.fancybox-inner {

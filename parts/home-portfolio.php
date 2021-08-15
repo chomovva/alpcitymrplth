@@ -7,54 +7,54 @@ namespace alpcitymrplth;
 if ( ! defined( 'ABSPATH' ) ) { exit; };
 
 
-?>
+global $post;
 
 
-<section class="section section--portfolio mt-3 mb-3 pt-3 pb-3 portfolio slider" id="portfolio">
-	<div class="container">
-		<div class="row middle-xs mb-3">
-			<div class="col-xs-12 col-sm-12 col-md-4 col-lg-5">
-				<h2 id="portfolio-title">Наши проекты</h2>
-			</div>
-			<div class="col-xs-8 col-sm-8 col-md-4 col-lg-4"><a class="btn btn-lg btn-primary" href="#">Все проекты</a></div>
-			<div class="col-xs-4 col-sm-4 col-md-4 col-lg-3">
-				<div class="controls">
-					<button class="slider-button prev" id="portfolio-prev-button"><span class="sr-only">Предыдущая запись</span></button>
-					<button class="slider-button next" id="portfolio-next-button"><span class="sr-only">Следующая запись</span></button>
-				</div>
-			</div>
-		</div>
-		<div id="portfolio-content">
-			<div class="card"><a class="wrap" href="#"><img class="thumbnail" src="./userfiles/portfolio/01.jpg" alt="ССК “ОЛИМП”" loading="lazy"/>
-					<div class="overlay">
-						<h3 class="title">ССК “ОЛИМП”</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
-					</div></a></div>
-			<div class="card"><a class="wrap" href="#"><img class="thumbnail" src="./userfiles/portfolio/02.jpg" alt="ССК “ОЛИМП”" loading="lazy"/>
-					<div class="overlay">
-						<h3 class="title">ССК “ОЛИМП”</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
-					</div></a></div>
-			<div class="card"><a class="wrap" href="#"><img class="thumbnail" src="./userfiles/portfolio/01.jpg" alt="ССК “ОЛИМП”" loading="lazy"/>
-					<div class="overlay">
-						<h3 class="title">ССК “ОЛИМП”</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
-					</div></a></div>
-			<div class="card"><a class="wrap" href="#"><img class="thumbnail" src="./userfiles/portfolio/02.jpg" alt="ССК “ОЛИМП”" loading="lazy"/>
-					<div class="overlay">
-						<h3 class="title">ССК “ОЛИМП”</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
-					</div></a></div>
-			<div class="card"><a class="wrap" href="#"><img class="thumbnail" src="./userfiles/portfolio/01.jpg" alt="ССК “ОЛИМП”" loading="lazy"/>
-					<div class="overlay">
-						<h3 class="title">ССК “ОЛИМП”</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
-					</div></a></div>
-			<div class="card"><a class="wrap" href="#"><img class="thumbnail" src="./userfiles/portfolio/02.jpg" alt="ССК “ОЛИМП”" loading="lazy"/>
-					<div class="overlay">
-						<h3 class="title">ССК “ОЛИМП”</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
-					</div></a></div>
-		</div>
-	</div>
-</section>
+$title = get_theme_mod( 'homeportfoliotitle' );
+$label = get_theme_mod( 'homeportfoliobtnlabel' );
+$permalink = get_theme_mod( 'homeportfoliobtnpermalink' );
+$category = get_theme_mod( 'homeportfoliocategory' );
+$numberposts = get_theme_mod( 'homeportfolionumberposts' );
+$content = '';
+
+if ( absint( $category ) ) {
+
+	$entries = get_posts( [
+		'numberposts' => $numberposts,
+		'category'    => $category,
+		'orderby'     => 'date',
+		'order'       => 'DESC',
+		'post_type'   => 'post',
+		'suppress_filters' => true,
+	] );
+
+	if ( is_array( $entries ) && ! empty( $entries ) ) {
+		
+		ob_start();
+		
+		foreach ( $entries as $entry ) {
+			$post = $entry;
+			setup_postdata( $post );
+			include get_theme_file_path( 'views/entry-portfolio.php' );
+		}
+
+		wp_reset_postdata();
+		
+		$content = ob_get_contents();
+		
+		ob_end_clean();
+
+		wp_enqueue_script( 'slick' );
+	
+		add_action( 'get_footer', function () {
+			wp_enqueue_style( 'slick' );
+		}, 10, 0 );
+	
+		if ( file_exists( $init_portfolio_script_path = get_theme_file_path( 'scripts/init/home-portfolio.js' ) ) ) {
+			wp_add_inline_script( 'slick', file_get_contents( $init_portfolio_script_path ), 'after' );
+		}
+
+		include get_theme_file_path( 'views/home-portfolio.php' );
+	}
+
+}

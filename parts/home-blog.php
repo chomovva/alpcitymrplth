@@ -16,7 +16,9 @@ if ( ! defined( 'ABSPATH' ) ) { exit; };
 			<div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
 				<h2 class="mb-3" id="blog-title">Блог</h2>
 			</div>
-			<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 text-right"><a class="btn btn-primary" href="#">Все посты</a></div>
+			<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 text-right">
+				<a id="blog-permalink" class="btn btn-primary" href="#">Все посты</a>
+			</div>
 		</div>
 		<div class="row stratch-xs mt-3 center-xs">
 			<article class="col-xs-12 col-sm-12 col-md-6 col-lg-6 mb-3 entry">

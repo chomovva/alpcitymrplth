@@ -1,7 +1,7 @@
 <?php
 
 
-namespace ropejump;
+namespace alpcitymrplth;
 
 
 if ( ! defined( 'ABSPATH' ) ) { exit; };

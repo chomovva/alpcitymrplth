@@ -50,4 +50,17 @@ if ( is_customize_preview() ) {
 	get_template_part( 'customizer/wp-customize-control-tinymce-editor' );
 	get_template_part( 'customizer/register-panels' );
 	get_template_part( 'customizer/additional-scripts' );
+	get_template_part( 'customizer/header' );
+	get_template_part( 'customizer/modals' );
+	get_template_part( 'customizer/home-jumbotron' );
+	get_template_part( 'customizer/home-about' );
+	get_template_part( 'customizer/home-experience' );
+	get_template_part( 'customizer/home-services' );
+	get_template_part( 'customizer/home-shop' );
+	get_template_part( 'customizer/home-porfolio' );
+	get_template_part( 'customizer/home-reviews' );
+	get_template_part( 'customizer/home-action' );
+	get_template_part( 'customizer/home-blog' );
+	get_template_part( 'customizer/aside-basement' );
+	get_template_part( 'customizer/footer' );
 }

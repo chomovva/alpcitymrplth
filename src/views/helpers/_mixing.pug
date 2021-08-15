@@ -16,7 +16,7 @@ mixin widget ( args )
 //- товар магазина
 mixin product ( args )
 	.product: a.wrap( href='#' )
-		img.thumbnail( loading='lazy' src=args.thumbnail alt=args.title )
+		img.wp-post-thumbnail( loading='lazy' src=args.thumbnail alt=args.title )
 		.overlay
 			h3.title #{args.title}
 			p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
@@ -24,7 +24,7 @@ mixin product ( args )
 //- работа портфолио
 mixin card ( args )
 	.card: a.wrap( href="#" )
-		img.thumbnail( src=args.thumbnail alt=args.title loading='lazy' )
+		img.wp-post-thumbnail( src=args.thumbnail alt=args.title loading='lazy' )
 		.overlay
 			h3.title #{args.title}
 			p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
