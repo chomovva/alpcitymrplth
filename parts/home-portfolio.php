@@ -12,12 +12,15 @@ global $post;
 
 $title = get_theme_mod( 'homeportfoliotitle' );
 $label = get_theme_mod( 'homeportfoliobtnlabel' );
-$permalink = get_theme_mod( 'homeportfoliobtnpermalink' );
-$category = get_theme_mod( 'homeportfoliocategory' );
-$numberposts = get_theme_mod( 'homeportfolionumberposts' );
+$permalink = '';
+$category = get_theme_mod( 'homeportfoliocategoryid' );
+$numberposts = get_theme_mod( 'homeportfolionumberposts', 2 );
 $content = '';
 
+
 if ( absint( $category ) ) {
+
+	$permalink = get_category_link( $category );
 
 	$entries = get_posts( [
 		'numberposts' => $numberposts,
@@ -55,6 +58,7 @@ if ( absint( $category ) ) {
 		}
 
 		include get_theme_file_path( 'views/home-portfolio.php' );
+
 	}
 
 }

@@ -4,7 +4,7 @@
 //
 
 
-.font-italic, .font-weight-italic { font-style: italic; }
+.font-italic, .font-style-italic { font-style: italic; }
 .font-bold, .font-weight-bold { font-weight: bold; }
 .font-normal, .font-weight-normal { font-weight: normal;	font-style: normal; }
 
@@ -15,6 +15,7 @@
 
 .text-primary { color: $brand-primary; }
 .text-success { color: $brand-success; }
+.text-warning { color: $brand-warning; }
 
 
 .small { @extend %small; }

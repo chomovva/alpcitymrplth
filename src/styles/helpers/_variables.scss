@@ -22,11 +22,13 @@ $screen-nav-hide: $screen-lg;
 $brand-default:     #343434;
 $brand-primary:     #005BC1;
 $brand-success:     #F24822;
+$brand-warning:     #FF0000;
 
 $brand-colors:
 	'default' $brand-default,
 	'primary' $brand-primary,
-	'success' $brand-success;
+	'success' $brand-success,
+	'warning' $brand-warning;
 
 
 $body-color: #ffffff;

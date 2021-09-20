@@ -12,9 +12,14 @@ if ( ! defined( 'ABSPATH' ) ) { exit; };
 
 <div class="section section--jumbotron jumbotron xy-center bg-primary mt-0" id="jumbotron">
 	
-	<?php if ( isset( $bgi_src ) && is_url( $bgi_src ) ) : ?>	
-		<div class="bgi" id="jumbotron-bgi" data-src="./userfiles/jumbotron.jpg"></div>
-	<?php endif; ?>
+	<?php
+		if ( isset( $bgi_id ) && $bgi_id ) {
+			echo wp_get_attachment_image( $bgi_id, wp_is_mobile() ? 'large' : 'full', false, [
+				'id' => 'jumbotron-bgi',
+				'class' => 'bgi'
+			] );
+		}
+	?>
 	
 	<div class="container mt-3 mb-3">
 		<div class="row">

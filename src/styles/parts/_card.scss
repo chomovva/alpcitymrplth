@@ -13,11 +13,11 @@
 	color: #fff;
 }
 
-.card .wrap:hover .wp-post-thumbnail {
+.card .wrap:hover .wp-post-image {
 	transform: scale( 1.05 );
 }
 
-.card .wp-post-thumbnail {
+.card .wp-post-image {
 	min-width: 100%;
 	min-height: 100%;
 	width: auto;
@@ -39,9 +39,13 @@
 	width: 12.5rem;
 	height: 5rem;
 	transition: background-color .2s;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
 	@include min-width ( $screen-sm ) {
 		left: auto;
-		height: 5.5rem;
+		height: 7.5rem;
 		right: 2rem;
 		bottom: 2rem;
 	}
@@ -49,7 +53,7 @@
 
 .card .title {
 	margin-top: 0;
-	max-height: 1 * $line-height-base * 1em;
+	max-height: 2 * $line-height-base * 1em;
 }
 
 .card .title + p {

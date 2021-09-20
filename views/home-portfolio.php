@@ -37,7 +37,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; };
 
 		<?php if ( isset( $content ) ) : ?>
 			<div id="portfolio-content">
-				<?php the_content(); ?>
+				<?php echo $content; ?>
 			</div>
 		<?php endif; ?>
 

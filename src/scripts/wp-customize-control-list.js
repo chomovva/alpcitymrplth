@@ -559,6 +559,7 @@
 			$modal.on( 'change', '.form [name][type=hidden]', params, SaveItem );
 			$modal.on( 'change', '.form textarea[name]', params, SaveItem );
 			$modal.on( 'keyup', '.form [name][type=text]', params, SaveItem );
+			$modal.on( 'keyup', '.form [name][type=number]', params, SaveItem );
 			$modal.on( 'keyup', '.form [name][type=url]', params, SaveItem );
 			$modal.on( 'keyup', '.form [name][type=tel]', params, SaveItem );
 			$modal.on( 'keyup', '.form [name][type=password]', params, SaveItem );

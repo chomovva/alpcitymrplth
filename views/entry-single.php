@@ -10,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; };
 ?>
 
 
-<h1><?php the_title( '', '', true ); ?></h1>
+<?php the_title( '<h1>', '</h1>', true ); ?>
 
 <div class="row">
 	<div class="col-xs col-sm text-left">
@@ -27,4 +27,8 @@ if ( ! defined( 'ABSPATH' ) ) { exit; };
 	<?php the_content( null, false ); ?>
 </div>
 
-<?php get_template_part( 'parts/pager' ); ?>
+<?php
+
+comments_template();
+
+get_template_part( 'parts/pager' );

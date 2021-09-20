@@ -31,14 +31,15 @@ function setup_default_mods( $old_name ) {
 	 	'headerphone'                => '380688478820',
 
 	 	// Главная страница - Первый экран
+	 	'homejumbotronusedby'        => false,
 	 	'homejumbotrontitle'         => get_bloginfo( 'name', 'raw' ),
-	 	'homejumbotronbtnlabel'      => 'и',
-	 	'homejumbotronbtnhref'       => '',
+	 	'homejumbotronbtnlabel'      => '',
+	 	'homejumbotronbtnhref'       => '#',
 	 	'homejumbotronexcerpt'       => get_bloginfo( 'description', 'raw' ),
 	 	'homejumbotronbgisrc'        => '',
 
 	 	// Главная страница - О нас
-	 	'homeaboutusedby'            => true,
+	 	'homeaboutusedby'            => false,
 	 	'homeabouttitle'             => '',
 	 	'homeaboutdescription'       => '',
 	 	'homeaboutthumbnailsrc'      => '',
@@ -53,17 +54,33 @@ function setup_default_mods( $old_name ) {
 	 	'homeservicestitle'          => 'Чем мы занимаемся',
 	 	'homeservices'               => [],
 
+	 	// Главная страница - Магазин
+	 	'homeshopusedby'             => true,
+	 	'homeshoptitle'              => 'Магазин',
+	 	'homeshopbtnlabel'           => 'Все товары',
+
+	 	// Главная страница - Портфолио
+	 	'homeportfoliousedby'        => false,
+	 	'homeportfoliotitle'         => '',
+	 	'homeportfoliobtnlabel'      => '',
+	 	'homeportfoliocategoryid'    => '',
+
 	 	// Главная страница - Заказать расчет
 	 	'homeactionusedby'           => '',
 	 	'homeactiontitle'            => '',
 	 	'homeactionexcerpt'          => '',
 	 	'homeactionbtnlabel'         => '',
-	 	'homeactionbtnhref'          => '',
+	 	'homeactionbtnhref'          => '#',
 
-	 	// Главная страница - Магазин
-	 	'homeshopusedby'             => true,
-	 	'homeshoptitle'              => 'Магазин',
-	 	'homeshopbtnlabel'           => 'Все товары',
+	 	// Главная страница - Отзывы
+	 	'homereviewsusedby'          => false,
+	 	'homereviewstitle'           => '',
+
+	 	// Главная страница - Блог
+	 	'homeblogusedby'             => '',
+	 	'homeblogtitle'              => '',
+	 	'homeblogbtnlabel'           => '',
+	 	'homeblogcategoryid'         => '',
 
 	 	// Сайдбар подвала
 	 	'asidephone'                 => '',
@@ -77,6 +94,10 @@ function setup_default_mods( $old_name ) {
 
 	 	// настройки шаблона Архива
 	 	'archivetitleprefix'         => '',
+
+	 	// страница ошибки 404
+	 	'error404title'              => 'Страница не найдена',
+	 	'error404description'        => '',
 
 	], $mods ) );
 }

@@ -11,6 +11,7 @@ form {
 	textarea,
 	input[ type="tel" ],
 	input[ type="text" ],
+	input[ type="number" ],
 	input[ type="email" ],
 	input[ type="password" ] {
 		border-radius: $border-radius;
@@ -18,12 +19,13 @@ form {
 		padding: .5rem 1rem;
 		display: block;
 		border: .1rem solid $text-color;
-		margin-top: 1rem;
-		margin-bottom: 1rem;
+		// margin-top: 1rem;
+		// margin-bottom: 1rem;
 		width: 100%;
 		box-sizing: border-box;
 		outline: none;
 		color: $text-color;
+		line-height: $line-height-base;
 	}
 
 	select {
@@ -41,12 +43,13 @@ form {
 	select.control-lg,
 	textarea.control-lg,
 	input[ type="tel" ].control-lg,
+	input[ type="number" ].control-lg,
 	input[ type="text" ].control-lg,
 	input[ type="email" ].control-lg,
 	input[ type="password" ].control-lg {
 		@extend %button-large;
-		padding-left: 1rem;
-		padding-right: 1rem;
+		padding: .75rem 1rem;
+		border-width: 2px;
 	}
 
 	[ type="submit" ]:not( .searchsubmit ) {

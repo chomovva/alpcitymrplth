@@ -61,6 +61,7 @@ function dequeue_style() {
 	wp_dequeue_style( 'wpdiscuz-user-content-css' );
 	wp_dequeue_style( 'exactmetrics-popular-posts-style-css' );
 	wp_dequeue_style( 'tablepress-default-css' );
+	wp_dequeue_style( 'site-reviews-css' );
 }
 
 add_action( 'wp_print_styles', 'alpcitymrplth\dequeue_style' );
@@ -88,6 +89,7 @@ function print_styles() {
 	wp_enqueue_style( 'wpdiscuz-user-content-css' );
 	wp_enqueue_style( 'exactmetrics-popular-posts-style-css' );
 	wp_enqueue_style( 'tablepress-default-css' );
+	wp_enqueue_style( 'site-reviews-css' );
 }
 add_action( 'get_footer', 'alpcitymrplth\print_styles', 10, 0 );
 

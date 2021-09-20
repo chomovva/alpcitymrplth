@@ -44,7 +44,7 @@ $address = trim( get_theme_mod( 'asideaddress' ) );
 					<?php endif; ?>
 				</div>
 				<div class="col-xs-12 col-sm-6 col-md col-lg last-sm text-xs-center text-sm-right">
-					<?php if ( ( bool ) $email && is_email( $email, false ) ) : ?>
+					<?php if ( is_email( $email, false ) ) : ?>
 						<p>
 							<a id="aside-email" href="mailto:<?php echo esc_attr( $email ); ?>">
 								<?php echo $email; ?>

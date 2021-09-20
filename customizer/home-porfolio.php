@@ -81,27 +81,54 @@ function customizer_register_home_portfolio( $wp_customize ) {
 	] ); /**/
 
 	$wp_customize->add_setting(
-		'homeportfoliobtnhref',
+		'homeportfoliocategoryid',
 		[
 			'transport'         => 'postMessage',
-			'sanitize_callback' => 'sanitize_text_field',
+			'sanitize_callback' => 'absint',
 		]
 	);
 	$wp_customize->add_control(
-		'homeportfoliobtnhref',
+		'homeportfoliocategoryid',
 		[
 			'section'           => ALPCITYMRPLTH_SLUG . '_home_portfolio',
-			'label'             => __( 'Атрибут HREF кнопки', ALPCITYMRPLTH_TEXTDOMAIN ),
-			'type'              => 'text',
+			'label'             => __( 'Категория', ALPCITYMRPLTH_TEXTDOMAIN ),
+			'type'              => 'select',
+			'choices'           => get_terms( [
+				'taxonomy'   => 'category',
+				'hide_empty' => false,
+				'fields'     => 'id=>name',
+			] ),
 		]
 	);
-	$wp_customize->selective_refresh->add_partial( 'homeportfoliobtnhref', [
-		'selector'         => '#portfolio-permalink',
-		'render_callback'  => function () { return customizer_get_text_theme_mod( 'homeportfoliobtnhref' ); },
+	$wp_customize->selective_refresh->add_partial( 'homeportfoliocategoryid', [
+		'render_callback'  => '__return_false',
 		'fallback_refresh' => true,
 	] ); /**/
 
-	// выбор категории
+	$wp_customize->add_setting(
+		'homeportfolionumberposts',
+		[
+			'transport'         => 'postMessage',
+			'default'           => '2',
+			'sanitize_callback' => 'absint',
+		]
+	);
+	$wp_customize->add_control(
+		'homeportfolionumberposts',
+		[
+			'section'           => ALPCITYMRPLTH_SLUG . '_home_portfolio',
+			'label'             => __( 'Количество записей', ALPCITYMRPLTH_TEXTDOMAIN ),
+			'type'              => 'number',
+			'input_attr'        => [
+				'min'             => '2',
+				'min'             => '10',
+			],
+		]
+	);
+	$wp_customize->selective_refresh->add_partial( 'homeportfoliocategoryid', [
+		'render_callback'  => '__return_false',
+		'fallback_refresh' => true,
+	] ); /**/
 
 }
 

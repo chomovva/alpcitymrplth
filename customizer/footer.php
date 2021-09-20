@@ -7,10 +7,10 @@ namespace alpcitymrplth;
 if ( ! defined( 'ABSPATH' ) ) { exit; };
 
 
-function customizer_register_footer( $wp_customize ) {
+function customizer_register_footer2( $wp_customize ) {
 
 	$wp_customize->add_section(
-		ALPCITYMRPLTH_SLUG . '_home_footer',
+		ALPCITYMRPLTH_SLUG . '_footer',
 		[
 			'title'            => __( 'Подвал сайта', ALPCITYMRPLTH_TEXTDOMAIN ),
 			'priority'         => 120,
@@ -28,8 +28,8 @@ function customizer_register_footer( $wp_customize ) {
 	$wp_customize->add_control(
 		'footercopyname',
 		[
-			'section'           => ALPCITYMRPLTH_SLUG . '_home_footer',
-			'label'             => __( 'Номер телефона', ALPCITYMRPLTH_TEXTDOMAIN ),
+			'section'           => ALPCITYMRPLTH_SLUG . '_footer',
+			'label'             => __( 'Копирайт', ALPCITYMRPLTH_TEXTDOMAIN ),
 			'type'              => 'text',
 		]
 	);
@@ -41,4 +41,4 @@ function customizer_register_footer( $wp_customize ) {
 
 }
 
-add_action( 'customize_register', 'alpcitymrplth\customizer_register_footer', 10, 1 );
+add_action( 'customize_register', 'alpcitymrplth\customizer_register_footer2', 10, 1 );

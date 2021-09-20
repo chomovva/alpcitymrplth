@@ -21,6 +21,7 @@
 		position: relative;
 		overflow: hidden;
 		padding-top: 100%;
+		background-color: lighten( $brand-default, 75% );
 	}
 
 	.entry .wp-post-thumbnail {
@@ -32,6 +33,12 @@
 		width: auto;
 		height: auto;
 		transform: translate( -50%, -50% );
+	}
+
+	.entry p {
+		text-overflow: ellipsis;
+		overflow: hidden;
+		max-height: 1em * $line-height-base * 3;
 	}
 
 }

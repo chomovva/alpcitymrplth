@@ -85,7 +85,7 @@ function customizer_register_home_experience( $wp_customize ) {
 				'type'       => 'list',
 				'controls'   => [
 					'value'      => [
-						'type'     => 'text',
+						'type'     => 'number',
 						'label'    => __( 'Значение', ALPCITYMRPLTH_TEXTDOMAIN ),
 						'input_atts' => [
 							'min'      => '1',

@@ -36,17 +36,16 @@ if ( ! defined( 'ABSPATH' ) ) { exit; };
 
 					<nav class="nav" id="nav">
 						<?php
-							if ( has_nav_menu( 'main' ) ) {
-								wp_nav_menu( [
-									'theme_location'  => 'main',
-									'menu'            => 'main',
-									'container'       => false,
-									'menu_id'         => 'main-nav-list',
-									'menu_class'      => 'nav__list list',
-									'echo'            => true,
-									'depth'           => 1,
-								] );
-							}
+							wp_nav_menu( [
+								'theme_location'  => 'main',
+								'menu'            => 'main',
+								'container'       => false,
+								'menu_id'         => 'main-nav-list',
+								'menu_class'      => 'nav__list list',
+								'echo'            => true,
+								'depth'           => 1,
+								'fallback_cb'     => '__return_empty_string',
+							] );
 						?>
 						<?php if ( has_nav_menu( 'mobile' ) || is_active_sidebar( 'mobile' ) ) : ?>
 							<button class="burger" data-mobilenav="toggle">

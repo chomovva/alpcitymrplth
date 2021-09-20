@@ -9,24 +9,20 @@ if ( ! defined( 'ABSPATH' ) ) { exit; };
 
 get_header();
 
+do_action( 'theme_container_before' );
 
-?>
+if ( have_posts() ) {
 
+	while ( have_posts() ) {
 
-<div class="container">
+		the_post();
 
-		
-	<?php if ( have_posts() ) : ?>
+		include get_theme_file_path( 'views/entry-' . ( is_single() ? 'single' : 'page' ) . '.php' );
 
-		<?php while ( have_posts() ) : the_post(); include get_theme_file_path( 'views/entry-singular.php' ); endwhile; ?>
+	}
 
-	<?php endif; ?>
+}
 
-
-</div>
-
-
-<?php
-
+do_action( 'theme_container_after' );
 
 get_footer();

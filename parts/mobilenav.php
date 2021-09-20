@@ -34,6 +34,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; };
 			'menu_class'      => 'list',
 			'echo'            => true,
 			'depth'           => 1,
+			'fallback_cb'     => '__return_empty_string',
 		] );
 
 		get_sidebar( 'mobile' );

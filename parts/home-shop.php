@@ -16,7 +16,14 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', g
 	$label = get_theme_mod( 'homeshopbtnlabel' );
 	$permalink = get_permalink( wc_get_page_id( 'shop' ) );
 	$content = '';
-	$entries = wc_get_products( [] );
+	$entries = get_posts( [
+		'numberposts' => -1,
+		'post_type'   => 'product',
+		'orderby'     => 'date',
+		'order'       => 'DESC',
+		'include'     => [],
+		'exclude'     => [],
+	] );
 
 	if ( is_array( $entries ) && ! empty( $entries ) ) {
 
@@ -25,7 +32,7 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', g
 		foreach ( $entries as $entry ) {
 			$post = $entry;
 			setup_postdata( $post );
-			include get_theme_file_path( 'views/entry-product.php' );
+			include get_theme_file_path( 'views/entry-catalog.php' );
 		}
 	
 		wp_reset_postdata();

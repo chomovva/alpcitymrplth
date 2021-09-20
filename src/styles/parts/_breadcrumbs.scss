@@ -1,9 +1,6 @@
 //	"Хлебные крошки"
 .breadcrumbs {
 
-	@extend %small;
-	margin: 2rem 0;
-
 	ul, ol {
 		list-style-type: none;	
 		padding: 0;

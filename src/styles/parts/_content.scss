@@ -2,6 +2,11 @@
 	
 	padding-bottom: 2rem;
 
+	h2 {
+		@extend .mt-3;
+		@extend .mb-3;
+	}
+
 	table {
 		margin-top: .5em;
 		margin-bottom: .5em;

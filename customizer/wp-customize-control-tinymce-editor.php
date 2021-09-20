@@ -41,8 +41,18 @@ if ( class_exists( 'WP_Customize_Control' ) ) :
 			wp_enqueue_editor();
 			wp_enqueue_script( 'wp-i18n' );
 			wp_enqueue_script( 'customize-preview' );
-			wp_enqueue_script( 'wp-customize-control-tinymce-editor', get_theme_file_uri( 'scripts/wp-customize-control-tinymce-editor.js' ), [ 'jquery', 'customize-preview' ], filemtime( get_theme_file_path( 'scripts/wp-customize-control-tinymce-editor.js' ) ), true );
-			wp_add_inline_script( 'wp-customize-control-tinymce-editor', "jQuery( document ).ready( function () { jQuery( '#customize-control-{$this->id}' ).WPCustomizeTinymceEditor(); } );", 'after' );
+			wp_enqueue_script(
+				'wp-customize-control-tinymce-editor',
+				get_theme_file_uri( 'scripts/wp-customize-control-tinymce-editor.js' ),
+				[ 'jquery', 'customize-preview' ],
+				filemtime( get_theme_file_path( 'scripts/wp-customize-control-tinymce-editor.js' ) ),
+				true
+			);
+			wp_add_inline_script(
+				'wp-customize-control-tinymce-editor',
+				"jQuery( document ).ready( function () { jQuery( '#customize-control-{$this->id}' ).WPCustomizeTinymceEditor(); } );",
+				'after'
+			);
 		}
 
 

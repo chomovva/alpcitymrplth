@@ -63,14 +63,14 @@ function customizer_register_home_blog( $wp_customize ) {
 		'homeblogcategoryid',
 		[
 			'transport'         => 'postMessage',
-			'sanitize_callback' => 'sanitize_text_field',
+			'sanitize_callback' => 'absint',
 		]
 	);
 	$wp_customize->add_control(
 		'homeblogcategoryid',
 		[
 			'section'           => ALPCITYMRPLTH_SLUG . '_home_blog',
-			'label'             => __( 'Заголовок &lt;H2&gt;', ALPCITYMRPLTH_TEXTDOMAIN ),
+			'label'             => __( 'Категория', ALPCITYMRPLTH_TEXTDOMAIN ),
 			'type'              => 'select',
 			'choices'           => get_terms( [
 				'taxonomy'   => 'category',
